@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CSS Template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+header {
+    background-color: #666;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+}
+
+aside {
+    float: right;
+    width: 30%;
+    height: 900px;
+    background: #ccc;
+    padding: 20px;
+}
+
+
+aside ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+article {
+    float: left;
+    padding: 20px;
+    width: 70%;
+    background-color: #f1f1f1;
+    height: 300px; 
+}
+
+section:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+footer {
+    background-color: #777;
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+
+</style>
+</head>
+<body>
+
+<h2>HTML5 Layout</h2>
+<p>Sample Header.........................................</p>
+<p>Sample Header2.........................................</p>
+
+<header>
+  <h2>Header sampl..............</h2>
+</header>
+
+<section>
+  <aside>
+    <ul>
+      <li><a href="#">Link1</a></li>
+      <li><a href="#">Link2</a></li>
+      <li><a href="#">Link3</a></li>
+    </ul>
+  </aside>
+  
+  <article>
+    <h1>some desc</h1>
+    <p>Para desc...............................................................................................................</p>
+    <p>Para desc...............................................................................................................</p>
+  </article>
+
+  <article>
+    <h1>London</h1>
+    <p>Para desc...............................................................................................................</p>
+    <p>Para desc...............................................................................................................</p>
+  </article><article>
+    <h1>London</h1>
+    <p>Para desc................................................................................................................</p>
+    <p>Para desc...............................................................................................................</p>
+  </article>
+</section>
+
+
+
+<footer>
+    <p>Footer Para desc...............................................................................................................</p>
+</footer>
+
+</body>
+</html>
