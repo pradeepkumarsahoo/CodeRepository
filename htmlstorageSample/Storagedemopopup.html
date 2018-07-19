@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <section>
+  	
+  	</section>
+  	<section>
+  		<h1>Local Storage</h1>
+ 		<article>
+ 			<label for="localValue1">Local Storage: </label>
+ 			<input id="localValu1" type="text" />
+ 		</article>
+  	</section>
+  	<section>
+  		<h1>Session Storage</h1>
+ 		<article>
+ 			<label for="sessionValue1">Session Storage: </label>
+ 			<input id="sessionValue" type="text" />
+ 		</article>
+  	</section>
+  	<section>
+  		
+		<input type="button" onclick="loadSession();" value="Load Session Storage1" />
+  	
+  	</section>
+  	
+  	<script type="text/javascript">
+	  var key = "MyKey";
+	  
+  		var sessionDisplay = document.getElementById("sessionValue");
+  		
+  		function loadSession() {
+			sessionDisplay.value = sessionStorage.getItem(key);
+  		}
+  		
+  		
+  	
+  		
+  		function loadSession() {
+  			sessionDisplay.value = sessionStorage.getItem(key);
+  		}
+  		
+  		
+  	</script>
+  </body>
+</html>
