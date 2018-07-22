@@ -1,0 +1,27 @@
+<div>
+  <table>
+    <tr>
+      {{title}}
+      <td routerLinkActive="active" style="font-size:30px;border:10px;background:-moz-element;background-color: coral;"  >
+          <a routerLink="Home">Home</a>
+
+      </td>
+    
+        <td routerLinkActive="active"  style="font-size:30px;border:10px;background:-moz-element;background-color: coral;" >
+          <a routerLink="Employees">Employees</a>
+       
+      </td>
+
+        <td routerLinkActive="active"  style="font-size:30px;border:10px;background:-moz-element;background-color:coral;">
+          <a routerLink="News">News</a>
+        
+      </td>
+      
+      <td routerLinkActive="active"  style="font-size:30px;border:10px;background:-moz-element;background-color:coral;">
+          <a routerLink="Account">Account</a>
+      </td>
+      </tr>
+      <br/>
+  </table>
+  <router-outlet></router-outlet>
+</div>
