@@ -1,4 +1,5 @@
 <div style="border:2px solid gray;">
+  {{message}}
 
 
   <table style="width:100%">
@@ -14,9 +15,10 @@
       <th class="tablerow">Account Type</th>
       <th class="tablerow">Account Open Date</th>
       <th class="tablerow">Account Credit Score</th>
+      <th></th>
     </tr>
 
-    <tr *ngFor="let col of accountlist; let i = index" style="border:2px solid gray;">
+    <tr *ngFor="let col of accountlist; let i = index" style="border:2px solid gray;"  appHighlight>
 
       <td class="tablerowcell">{{col.Accountid}}</td>
       <td class="tablerowcell">{{col.AccountNumber}}</td>
@@ -30,6 +32,13 @@
       <td class="tablerowcell">{{col.AccountType}}</td>
       <td class="tablerowcell">{{col.AccountOpenDate}}</td>
       <td class="tablerowcell">{{col.AccountCreditScore}}</td>
+      <td > 
+          <button (click)="SetValue(col.Accountid)">Show Details</button>
+   
+      </td>
     </tr>
   </table>
 </div>
+
+  
+ <app-account-transactions  [ParentData]="accountid" *ngIf="accountid !=null" (childevent)="message=$event" >

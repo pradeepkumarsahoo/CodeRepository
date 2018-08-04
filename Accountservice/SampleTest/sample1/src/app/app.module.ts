@@ -9,6 +9,11 @@ import { ContactComponent } from './contact/contact.component';
 import { EmployeeService } from './employee.service';
 import { AccountComponent } from './account/account.component';
 import { AccountService } from './account.service';
+import { AccountTransactionsComponent } from './account-transactions/account-transactions.component';
+import { AccountTransactionService } from './accountTransactions.service';
+import { HighlightDirective } from './highlight.directive';
+import { LoginComponent } from './login/login.component';
+
 
 
 
@@ -28,12 +33,15 @@ const appRoutes: Routes = [
     EmployeeComponent,
     NewsComponent,
     ContactComponent,
-    AccountComponent
+    AccountComponent,
+    AccountTransactionsComponent,
+    HighlightDirective,
+    LoginComponent
   ],
   imports: [
     BrowserModule,RouterModule.forRoot(appRoutes)
   ],
-  providers: [EmployeeService,AccountService],
+  providers: [EmployeeService,AccountService,AccountTransactionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
