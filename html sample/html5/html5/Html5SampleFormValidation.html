@@ -1,0 +1,46 @@
+<html>
+
+<head>
+</head>
+<form>
+      <div style="border:3px solid gray">
+            <label><h1>Html Form Validation</h1></label> 
+            <hr/>
+            
+            <div>
+
+                        <label ><b>Email:</b></label>  <input type="email" name="TxtEmail" id="TxtEmail" required />
+            </div>
+            <br/>
+            <div>
+
+
+                  <label><b>UserId:</b></label>
+
+                  <input type="text" name="username" id="username" pattern="[a-zA-Z]{5,}" required />
+            </div>
+            <br/>
+            <div>
+                  <label><b>Age:</b></label>
+
+                  <input type="number" name="TxtAge" id="TxtAge" min="10" max="50"  required/>
+            </div>
+
+            <br />
+            <div style="border:2px solid gray;">
+                        <video controls width="500" height="350" poster="./images/photo1.jpg">
+                              <source src="Video/Wildlife.avi">
+                              <source src="Video/Rajni.mp4">
+                          <object id="mediaplayer">
+                          <param name="filename" value="./Video/Wildlife.avi">
+                               <embed src="./Video/Wildlife.avi" width="500" height="350"/>
+                          </object>
+                          </video>
+            </div>
+            <input type="submit" value="Register" />
+      </div>
+</form>
+
+</body>
+
+</html>

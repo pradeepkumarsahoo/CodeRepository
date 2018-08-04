@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<meta http-equiv='cache-control' content='no-cache'>
+	<meta http-equiv='expires' content='0'>
+	<meta http-equiv='pragma' content='no-cache'>
+
+</head>
+
+<body>
+	<section>
+		<input id="theData" type="text" placeholder="Enter some text to save" />
+	</section>
+	<section>
+		<h1>Local Storage</h1>
+		<article>
+			<label for="localValue">Local Storage: </label>
+			<input id="localValue" type="text" />
+		</article>
+	</section>
+	<section>
+		<h1>Session Storage</h1>
+		<article>
+			<label for="sessionValue">Session Storage: </label>
+			<input id="sessionValue" type="text" />
+		</article>
+	</section>
+	<section>
+		<input type="button" onclick="saveLocal();" value="Save to Local Storage" />
+		<input type="button" onclick="saveSession();" value="Save to Session Storage" />
+		<input type="button" onclick="loadLocal();" value="Load Local Storage" />
+		<input type="button" onclick="loadSession();" value="Load Session Storage" />
+		<input type="button" onclick="clearLocal();" value="Clear Local Storage" />
+		<input type="button" onclick="clearSession();" value="Clear Session Storage" />
+		<a href="Storagedemopopup.html" onclick="return popitup('Storagedemopopup.html')">Confirm Page</a>
+	</section>
+
+	<script type="text/javascript">
+		var key = "MyKey";
+		var localDisplay = document.getElementById("localValue");
+		var sessionDisplay = document.getElementById("sessionValue");
+
+		function loadLocal() {
+			localDisplay.value = localStorage.getItem(key);
+		}
+
+		function saveLocal() {
+			var data = document.getElementById("theData").value;
+			localStorage.setItem(key, data);
+		}
+
+		function clearLocal() {
+			//	localStorage.clear();
+			window.localStorage.removeItem('key');
+		}
+
+		function loadSession() {
+			sessionDisplay.value = sessionStorage.getItem(key);
+		}
+
+		function saveSession() {
+			var data = document.getElementById("theData").value;
+			sessionStorage.setItem(key, data)
+		}
+
+		function clearSession() {
+			sessionStorage.getItem(key);
+		}
+
+		function popitup(url) {
+			newwindow = window.open(url, 'name', 'height=600,width=550');
+			if (window.focus) { newwindow.focus() }
+			return false;
+		}
+	</script>
+</body>
+
+</html>

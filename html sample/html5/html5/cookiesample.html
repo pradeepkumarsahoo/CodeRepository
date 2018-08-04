@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript">
+        window.onload = function () {
+            if (document.cookie.length != 0) {
+                var nameValueArray = document.cookie.split("=");
+                document.getElementById("ddlTheme").value = nameValueArray[1];
+
+                document.bgColor = nameValueArray[1];
+                document.getElementById("lblthemetext").innerText = "The Cookie Value is"+nameValueArray[1];
+            }
+        }
+
+        function setColorCookie() {
+            var selectedValue = document.getElementById("ddlTheme").value;
+            if (selectedValue != "Select Color") {
+                document.bgColor = selectedValue;
+                document.cookie = "color=" + selectedValue +
+                    ";expires=Fri, 5 Aug 2018 01:00:00 UTC;";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <section>
+        <h1>cookie example</h1>
+        <article>
+            <select id="ddlTheme" onchange="setColorCookie()">
+                <option value="Select Color">Select Color</option>
+                <option value="red">Red</option>
+                <option value="green">Green</option>
+                <option value="blue">Blue</option>
+            </select>
+            <label id="lblthemetext" name="theme"></label>
+        </article>
+    </section>
+</body>
+</html>

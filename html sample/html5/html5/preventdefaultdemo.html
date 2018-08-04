@@ -1,0 +1,44 @@
+<html>
+
+<head>
+
+
+    <script type="text/javascript">
+        // document.oncontextmenu = disableRightClick;
+
+        // function disableRightClick(event) {
+        //     event = event || window.event;
+
+        //     if (event.preventDefault) {
+        //         event.preventDefault();
+        //     }
+        //     else {
+        //         event.returnValue = false
+        //     }
+        }
+
+        function preventLinkNavigation(event) {
+            event = event || window.event;
+
+            if (event.preventDefault) {
+                event.preventDefault();
+            }
+            else {
+                event.returnValue = false
+            }
+        }
+    </script>
+</head>
+
+<!-- <body oncontextmenu="return false"> -->
+
+<body>
+    <h1>On this page right click is disabled</h1>
+
+
+    <a href="www.google.com" onclick="preventLinkNavigation(event)">
+        not take to google
+    </a>
+</body>
+
+</html>

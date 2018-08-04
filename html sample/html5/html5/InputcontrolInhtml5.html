@@ -1,0 +1,140 @@
+<html>
+
+<head>
+</head>
+<form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+<body>
+
+    <div style="border:3px solid gray;">
+        <h1>HTML5 New input controls</h1>
+        <hr style="background: red;">
+        <div>
+            <label>
+                <b>Please Select a color:</label>
+            </b>
+            <input type="color" name="color">
+
+            <input type="text" placeholder="Enter Value" id="MyPlaceHolderControl"
+
+               name="MyPlaceHolderControl" />
+
+        </div>
+    </br>
+        <div>
+            <label>
+                <b>Please Select a Date:</label>
+            </b>
+            <input type="date" name="date">
+
+        </div>
+    </br>
+
+        <div>
+            <label>
+                <b>Please Select a DateTime:</label>
+            <input type="datetime" name="datetime">
+
+        </div>
+    </br>
+
+        <div>
+
+            <label>
+                <b>Please Select a DateTime Local:</label>
+            <input type="datetime-local" name="datetime-local">
+
+        </div>
+    </br>
+
+        <div>
+            <label>
+                <b>Please Select a Email:</label>
+            <input type="email" name="email">
+
+        </div>
+    </br>
+
+        <div>
+            <label>
+                <b>Please Select a Month:</label>
+            <input type="month" name="month">
+
+        </div>
+    </br>
+        <div>
+            <label>
+                <b>Please Select a Number:</label>
+            <input type="number" name="number">
+
+        </div>
+    </br>
+
+        <div>
+            <label>
+                <b>Please Select a Output Range:</label>
+                    <input type="range" id="a" value="50">100
+                    +<input type="number" id="b" value="50">
+                    =<output name="x" for="a b"></output>
+
+        </div>
+    </br>
+
+        <div>
+            <label>
+                <b>Please Select a Search:</label>
+            <input type="search" name="search" results="5" autosave="saved-searches">
+
+        </div>
+    </br>
+
+        <div>
+            <label>
+                <b>Please Select a Telephone:</label>
+            <input type="tel" name="tel">
+
+        </div>
+    </br>
+        <div>
+            <label>
+                <b>Please Select a Time:</label>
+            <input type="time" name="time">
+
+        </div>   </br>
+
+        <div>
+
+            <label>
+                <b>Please Select a url:</label>
+            <input type="url" name="url">
+
+        </div>   </br>
+
+        <div>
+            <label>
+                <b>Please Select a Week :</label>
+            <input type="week" name="week">
+
+        </div>
+    </br>
+        <div>
+            <div>
+                Select a browser :
+                <input list="browsers">
+
+                <datalist id="browsers">
+                    <option value="Internet Explorer">
+                        <option value="Firefox">
+                            <option value="Chrome">
+                                <option value="Opera">
+                                    <option value="Safari">
+                </datalist>
+            </div>
+
+            <input type="submit" value="Send">
+
+        </div>
+    </div>
+</form>
+</body>
+
+</html>

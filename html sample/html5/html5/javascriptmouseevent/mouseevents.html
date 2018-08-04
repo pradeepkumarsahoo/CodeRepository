@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<script type="text/javascript">
+		function logEvent(event) {
+			event = event || window.event;
+			document.getElementById("txtArea").value += event.type + "\r\n";
+		}
+
+		function clearText() {
+			document.getElementById("txtArea").value = "";
+		}
+	</script>
+</head>
+
+<body>
+
+	<section>
+		<input type="button" value="Single, Double or Right Click" onclick="logEvent(event)" onmousedown="logEvent(event)" onmouseup="logEvent(event)"
+		 onmouseover="logEvent(event)" onmouseout="logEvent(event)" ondblclick="logEvent(event)" oncontextmenu="logEvent(event)"
+		/>
+
+		<input type="button" value="Clear" onclick="clearText()" />
+		<br />
+		<br />
+		<textarea id="txtArea" rows="10" cols="20"></textarea>
+	</section>
+</body>
+
+</html>
