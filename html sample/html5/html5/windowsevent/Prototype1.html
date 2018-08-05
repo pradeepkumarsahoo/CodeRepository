@@ -1,0 +1,75 @@
+<html>
+
+<head>
+
+
+  <script>
+
+    //way 1  to create a javascript object  
+    function Employee(name) {
+      this.name = name;
+
+      this.getName = function () {
+        return this.name;
+      }
+    }
+
+    var e1 = new Employee("Pradeep Sahoo");
+    var e2 = new Employee("Mahesh P");
+
+    document.write("<h1>Using Object  way : Multiple copy </h1>");
+
+    document.write("e1.name = " + e1.getName() + "<br/>");
+    document.write("e2.name = " + e2.getName() + "<br/>"); 
+
+    //Way 2 to create javascript object 
+
+function Student(name)
+{
+    this.name = name;
+}
+
+var e1 = new Student("Manas");
+
+e1.getstudentName = function ()
+{
+    return this.name;
+}
+
+var e2 = new Student("Micky");
+
+e2.getstudentName = function ()
+{
+    return this.name;
+}
+document.write("<h1>On each object adding the method </h1>");
+document.write("e1.name = " + e1.getstudentName() + "<br/>");
+document.write("e2.name = " + e2.getstudentName() + "<br/>");
+
+function Employees(name)
+{
+    this.name = name;
+}
+
+Employees.prototype.getName = function ()
+{
+    return this.name;
+}
+
+var e1 = new Employees("Mark");
+var e2 = new Employees("Sara");
+document.write("<h1>Using Prototype way </h1>");
+document.write("e1.name = " + e1.getName() + "<br/>");
+document.write("e2.name = " + e2.getName() + "<br/>");
+
+
+
+  </script>
+</head>
+
+<body>
+
+
+</body>
+
+</html>

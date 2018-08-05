@@ -1,0 +1,44 @@
+<html>
+<head>
+    <style type="text/css">
+        .imgagecontainer
+        {
+            width:100px;
+            height:100px;
+            border:1px solid grey;
+        }
+    </style>
+</head>
+<body>
+
+
+    <img id="imgagecontainer" style="border:3px solid grey" 
+         src="1.jpg" height="500px" width="440x"/>
+    <br />
+    <div id="divId" onclick="changeImageOnClick(event)">
+        <img class="imgStyle" src="2.jpg" />
+        <img class="imgStyle" src="2.jpg" />
+        <img class="imgStyle" src="4.jpg" />
+        <img class="imgStyle" src="5.jpg" />
+      
+    </div>
+
+    <script type="text/javascript">
+
+        var images = document.getElementById("divId")
+                             .getElementsByTagName("img");
+
+
+        function changeImageOnClick(event)
+        {
+            event = event || window.event;
+            var targetElement = event.target || event.srcElement;
+
+            if (targetElement.tagName == "IMG")
+            {
+                mainImage.src = targetElement.getAttribute("src");
+            }
+        }
+    </script>
+</body>
+</html>

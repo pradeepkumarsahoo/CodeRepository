@@ -1,0 +1,65 @@
+<html>
+
+<head>
+  <script language="JavaScript">
+    function checkLogin() {
+      var username = document.getElementById("username").value;
+
+        var password = document.getElementById("password").value;
+
+     // alert(username);
+      if (username == null || username == "") {
+        document.getElementById('errors1').innerHTML = "*Please enter a username*";
+       
+      }
+
+       if (password == null || password == "") {
+        document.getElementById('errors2').innerHTML = "*Please enter a Password *";
+      }
+    }
+  </script>
+</head>
+
+<body>
+
+
+  <table style="border:2px solid gray;width:100%;">
+
+    <tr>
+      <td>
+          <h1>Login </h1>
+      </td>
+    </tr>
+    <tr>
+
+      <td>
+         
+        Username:
+        <input type="text" name="username" id="username" />
+        
+      </td>
+    </tr>
+
+    <tr>
+
+      <td>
+       Password: <input type="text" name="password" id="password" />
+
+      </td>
+    </tr>
+    <tr>
+
+      <td>
+
+       
+        <input id="clickMe" type="button" value="Log In " onclick="checkLogin();" />
+      </td>
+    </tr>
+  </table>
+ 
+  <div id="errors1"  style="color: red;">
+  </div>
+  <div id="errors2"  style="color: red;">
+  </div>
+</html>
+</body>

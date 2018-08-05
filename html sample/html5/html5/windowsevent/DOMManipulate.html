@@ -1,0 +1,47 @@
+<html>
+
+<head>
+	<title>JavaScript -Change table row color on check box changes</title>
+	<script type="text/javascript">
+		function ChangeBackgroundColor(status) {
+			//	alert(status.checked );
+			if (status.checked) {
+				document.getElementById('myTableData').bgColor = '#00FF00';
+				document.body.style.backgroundColor = "white";
+
+			}
+			else {
+
+				document.getElementById('myTableData').bgColor = '#003F87';
+				document.body.style.backgroundColor = "red";
+			}
+		}	
+	</script>
+</head>
+
+<body>
+	<div style="border:2px solid gray;">
+		<input type="checkbox" value="check" onclick="ChangeBackgroundColor(this)"> <p>Change table row color on check box changes</p>
+		<table id="myTableData" border="1" cellpadding="0" cellspacing="0" style="width:100%;">
+			<tr>
+				<td id="td1">Id</td>
+
+				<td id="td1">Name</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td id="td1">Mahesh</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td id="td1">Pradeep</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td id="td1">Ravi</td>
+			</tr>
+
+		</table>
+	</div>
+</body>
+</html>

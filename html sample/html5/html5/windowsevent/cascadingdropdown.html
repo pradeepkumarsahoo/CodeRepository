@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Form Submit</title>
+<style type="text/css">
+body { font-family:arial, helvetica, sans-serif; font-weight:normal; font-size:13px; color:#000; text-align:left; margin:3px 0px; }
+#wrap { width:500px; height:500px; margin:20px;  }
+select { width:150px; }
+</style>
+</head>
+
+<body>
+
+<div id="wrap">
+  <form name="myForm" action method="post">
+    <select name="categories" onchange="updateModels(this.form)">
+    <option>Please select</option>
+    <option>Fruits</option>
+    <option>Vegetables</option>
+    <option>Cars</option>
+    <option>Colours</option>
+    <option>Flowers</option>
+    </select> <select name="items"></select>
+    <!-- <input id="B1" type="button" onclick="checkIt(this.form)" value="Submit"> -->
+    <input id="B1" type="button" value="Submit">
+  </form>
+</div>
+<!-- end wrap -->
+<script type="text/javascript">
+var items = [];
+items.Fruits = ["Bananas", "Apples", "Grapes", "Oranges"];
+items.Vegetables = ["Carrots", "Onions", "Lettuce", "Brocolli"];
+items.Cars = ["BMW", "Ferrari", "Toyota", "Mitsubisi"];
+items.Colours = ["Black", "Yellow", "Blue", "Red"];
+items.Flowers = ["Rose", "Daffodils", "Daisies", "Violets"];
+// ---
+function updateModels(theForm) 
+ { if(theForm.categories.selectedIndex<1){return false; }
+   var op=theForm.categories.options;
+   var newModels = items[op[op.selectedIndex].value];
+   theForm.items.options.length = 0;
+   theForm.items.options[0] = new Option("Please select", "");
+   theForm.items.options[0].selected = true;
+   for (var i=0; i<newModels.length; i++) 
+   { theForm.items.options[i+1] = new Option(newModels[i], newModels[i]); }  
+ }
+// ---
+// check both selections have been made
+ document.getElementById("B1").onclick=function(event)
+  { event=event || window.event;
+    var targElem = event.target || event.srcElement;
+    var thisForm=targElem.parentNode;
+    if(thisForm.categories.selectedIndex>0 && thisForm.items.selectedIndex>0)
+      { var itemsP=thisForm.items;
+        location.href= itemsP[itemsP.selectedIndex].value+".htm"; }
+    else { return false; } 
+  }
+//
+</script>
+
+</body>
+
+</html>

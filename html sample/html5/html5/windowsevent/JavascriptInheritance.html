@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Creating a JavaScript Object.</p>
+
+</p>
+<script>
+  // Employee will be the base object (Similar to base class in c#)
+  var Employee = function (name) 
+    {
+        this.name = name;
+    }
+
+    // getName() function is added to the base object (Employee)
+    Employee.prototype.getName = function () 
+    {
+        return this.name;
+    }
+
+    // PermanentEmployee will be the derived object
+    var PermanentEmployee = function (annualSalary) 
+    {
+        this.annualSalary = annualSalary;
+    }
+
+    // Use prototype to associate Employee as the base object for PermanentEmployee
+    PermanentEmployee.prototype = new Employee("Hari");
+
+    var pe = new PermanentEmployee(50000);
+    pe.name="hari123";
+    document.write(pe.name);
+    // Derived object (permanentEmployee) can see the base object (Employee) getName() method
+    document.write(pe.getName());
+    alert(pe instanceof Employee); // Returns true
+    alert(pe instanceof PermanentEmployee); // Returns true
+</script>
+
+</body>
+</html>
