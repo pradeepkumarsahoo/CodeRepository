@@ -12,33 +12,37 @@
 <body>
 
 
-    <img id="imgagecontainer" style="border:3px solid grey" 
-         src="1.jpg" height="500px" width="440x"/>
+    <img id="image" src="1.jpg" style="width: 750px; height: 650px" />
     <br />
-    <div id="divId" onclick="changeImageOnClick(event)">
-        <img class="imgStyle" src="2.jpg" />
-        <img class="imgStyle" src="2.jpg" />
-        <img class="imgStyle" src="4.jpg" />
-        <img class="imgStyle" src="5.jpg" />
-      
-    </div>
+    <br />
+    <input type="button" value="Start Slide Show" onclick="startImageSlideShow()" />
+    <input type="button" value="Stop Slide Show" onclick="stopImageSlideShow()" />
 
     <script type="text/javascript">
+var intervalId;
 
-        var images = document.getElementById("divId")
-                             .getElementsByTagName("img");
+function startImageSlideShow()
+{
+    intervalId = setInterval(setImage, 500);
+}
 
+function stopImageSlideShow()
+{
+    clearInterval(intervalId);
+}
 
-        function changeImageOnClick(event)
-        {
-            event = event || window.event;
-            var targetElement = event.target || event.srcElement;
-
-            if (targetElement.tagName == "IMG")
-            {
-                mainImage.src = targetElement.getAttribute("src");
-            }
-        }
+function setImage()
+{
+    var imageSrc = document.getElementById("image").getAttribute("src");
+    var currentImageNumber = imageSrc.substring(imageSrc.lastIndexOf("/") + 1,
+                                                imageSrc.lastIndexOf("/") + 2);
+    if (currentImageNumber == 8)
+    {
+        currentImageNumber = 0;
+    }
+    document.getElementById("image").setAttribute("src",
+                                      (Number(currentImageNumber) + 1) + ".jpg");
+}
     </script>
 </body>
 </html>
