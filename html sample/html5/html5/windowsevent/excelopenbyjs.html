@@ -1,0 +1,20 @@
+<html>
+
+  <body>
+
+    <form name="form1">
+      <input type=button onClick="test()" value="Open File">
+      <br><br>
+
+      <iframe src="test.docx"></iframe>
+    </form>
+
+    <script type="text/javascript">
+      function test() {
+        var Excel = new ActiveXObject("Excel.Application");
+        Excel.Visible = true;
+        Excel.Workbooks.Open("teste.xlsx");
+      }
+    </script>
+  </body>
+</html>
