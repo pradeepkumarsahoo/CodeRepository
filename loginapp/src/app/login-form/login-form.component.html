@@ -1,0 +1,27 @@
+
+
+<form (submit)="loginUser($event)">
+<div  style="border:5px  solid gray;width:500px; height: 600px;background: cyan;">
+  <div class="input" style="font-size: 20px; font-weight:bold;">
+
+    Login Form
+    <hr/>
+  </div>
+
+  <div class="input">
+		<label style="font-size: 20px; font-weight:bold;">Username:</label>
+		<input type="text">
+  </div>
+  <br/>
+	<div class="input">
+		<label  style="font-size: 20px; font-weight:bold;">Password:</label>
+		<input type="password">
+	</div>
+  <div class="input" style="padding-left: 100px;">
+    <br/>
+
+		<input type="submit" value="Login" style="font-size:30px;">
+  </div>
+  <span style="background:red;">{{errormessage}}</span>
+</div>
+</form>
