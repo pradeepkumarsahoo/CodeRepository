@@ -1,0 +1,61 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+    <h1>
+        Welcome to {{ title }}!
+    </h1>
+    <div class="Rows">
+        <li *ngFor="let name of Names; let i = index">
+            {{i}} {{name}}
+        </li>
+
+        <div>
+            <div>
+                <table border="5px;">
+                    <thead>
+                        <tr style="color:red;">
+                            <th>ID</th>
+                            <th>Name </th>
+                            <th>Salary </th>
+                            <th>Actions </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let user of userlist; let i = index" class="tbl-row-border" (click)="setClickedRow(i)"
+                            [class.active]="i == selectedRow">
+
+
+                            <td>{{user.Id}}</td>
+                            <td>{{user.name|uppercase}}</td>
+                            <td>{{user.Salary}}</td>
+                            <td><input type="button" value="Edit" (click)="updateUser(user.Id)"><input type="button"
+                                    value="Delete" (click)="deleteUser(user.Id)"></td>
+                        </tr>
+                        <tr>
+                            <td>Id : <input type="text" id="txtId" #Id></td>
+                            <td>Name : <input type="text" id="txtId" #Name></td>
+                            <td>Salary : <input type="text" id="txtId" #Salary></td>
+                            <td><input type="button" value="Save" (click)="Save(Id.value,Name.value,Salary.value)"></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <div>
+
+        <h2>Reading as Template Reference Variable:</h2>
+        <b>Enter Value:</b> <input type="text" id="txtName" #MyInput>
+        <button (click)="logMessage(MyInput.value)">Read Template Values</button>
+
+
+    </div>
+
+    <div>
+
+        <h2>Two way Binding :</h2>
+        Enter text: <input [(ngModel)]="name" type="text">
+        {{name}}
+    </div>

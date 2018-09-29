@@ -1,0 +1,11 @@
+.Rows
+{
+    border:2px blue;
+    font-size:30px;
+    font-weight: bold;
+
+}
+.table tr.active td {
+    background-color:#123456 !important;
+    color: green;
+  }
