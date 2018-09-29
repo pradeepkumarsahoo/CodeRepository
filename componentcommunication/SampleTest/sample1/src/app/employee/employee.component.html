@@ -1,0 +1,23 @@
+<div style="border:2px solid gray;">
+
+    <h2>
+        <label>Name :</label>{{name|uppercase}}</h2>
+    <h2>
+        <label>Address:</label> {{address|uppercase}}</h2>
+    <h2>
+        <label>Phone No:</label> {{phoneno}}</h2>
+
+    <table>
+        <tr>
+            <th>#</th>
+            <th>id</th>
+            <th>Name</th>
+        </tr>
+
+        <tr *ngFor="let col of employees; let i = index" style="border:2px solid gray;">
+            <td>{{i + 1}}</td>
+            <td>{{col.id}}</td>
+            <td>{{col.empName}}</td>
+        </tr>
+    </table>
+</div>

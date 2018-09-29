@@ -1,0 +1,55 @@
+
+<style>
+    body {
+        font-family:Verdana,sans-serif;font-size:0.8em;
+    }
+    header,footer,section,article {
+        border:1px solid grey;
+        margin:5px;margin-bottom:15px;padding:8px;
+        background-color:white;
+    }
+    header,footer {
+        color:white;background-color:darkorchid;margin-bottom:5px;
+    }
+    section {
+        background-color:rgb(221, 221, 221);
+    }
+    nav ul {
+        margin:0;padding:0;
+    color:blue;
+    }
+    nav ul li {
+        display:inline; margin:5px;
+    }
+    a{ font-size: 20px;font-weight: bold;}
+    Asi { float: left; width: 100px; padding-left: 700px; }
+    </style>
+  <!-- <li *ngFor="let hero of heroes">
+
+    {hero}
+</li> -->
+
+
+<table>
+
+    <tr>
+        <td>
+
+            <h1>textttttt</h1>
+            
+            <li *ngFor="let tw of  heroes">
+                {{tw | uppercase}}
+             </li>
+
+        </td>
+
+        <select>
+            <option *ngFor="let tw of heroes" value= {{tw}}>
+              {{tw | lowercase}}
+            </option>
+          </select>
+    </tr>
+</table>
+
+
+   

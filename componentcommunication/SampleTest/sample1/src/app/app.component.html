@@ -1,0 +1,38 @@
+<div>
+  <table>
+    <tr>
+      {{title}}
+      <td routerLinkActive="active" style="font-size:30px;border:10px;background:-moz-element;background-color: coral;"  >
+          <a routerLink="Home">Home</a>
+
+      </td>
+    
+        <td routerLinkActive="active"  style="font-size:30px;border:10px;background:-moz-element;background-color: coral;" >
+          <a routerLink="Employees">Employees</a>
+       
+      </td>
+
+        <td routerLinkActive="active"  style="font-size:30px;border:10px;background:-moz-element;background-color:coral;">
+          <a routerLink="News">News</a>
+        
+      </td>
+      
+      <td routerLinkActive="active"  style="font-size:30px;border:10px;background:-moz-element;background-color:coral;">
+          <a routerLink="Account">Account</a>
+      </td>
+      </tr>
+      <br/>
+  </table>
+
+  <span class="setup">Given Number</span>  
+  <h1 class="punchline">{{ data }}</h1>  
+  
+<button type="button" 
+        (click)="fnAddNumber()">Add NUmber  
+</button>  
+<button type="button"  
+     
+        (click)="deleteNumber()">Clear Number  
+</button> 
+  <router-outlet></router-outlet>
+</div>

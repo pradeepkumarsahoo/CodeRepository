@@ -1,0 +1,42 @@
+<div style="border:2px solid gray;"   *ngIf="showtransaction ==true">
+
+
+  <table style="width:100%">
+    <tr style="background: cyan;">
+
+
+      <th class="tablerow">Account ID</th>
+      <th class="tablerow">AccountHolderName</th>
+      <th class="tablerow">TransactionReferenceno</th>
+
+      <th class="tablerow">TransactionPlace</th>
+      <th class="tablerow">TransactionAmount</th>
+
+
+    </tr>
+
+    <tr *ngFor="let col of accounTrxlist" style="border:2px solid gray;">
+
+      <td class="tablerowcell">{{ParentData}}</td>
+      <td class="tablerowcell">{{col.TransactionDate}}</td>
+
+      <td class="tablerowcell">{{col.TransactionReferenceno}}</td>
+
+      <td class="tablerowcell">{{col.TransactionPlace}}</td>
+
+      <td class="tablerowcell">{{col.TransactionAmount}}</td>
+
+
+
+    </tr>
+
+    <tr>
+      <td colspan="5">
+
+        <input type="button" (click)="closeTransaction();" value="Close Transaction">
+
+        <input type="button" (click)="SendParent();" value="Send Parent">
+      </td>
+    </tr>
+  </table>
+</div>
