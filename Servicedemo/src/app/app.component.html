@@ -3,6 +3,12 @@
   <h1>
     Welcome to {{ title }}!
   </h1>
-  <h1>{{messageName}}</h1>
+  <h1>{{messageName}} </h1>
   </div>  
+<div>
 
+  <input type="text" id="txtAccountno" #AccNo >
+  <input type="button" (click)="MaskAccount(AccNo.value)" value="Mask Account" >
+
+  My Account Number is : {{MaskedAccount}}
+</div>
