@@ -1,0 +1,28 @@
+<app-header></app-header>
+
+<h2> This is Parent Reading Data From Child Component</h2>
+
+<div class="divstyle1"  style="overflow:auto; width:400px;height:400px;">
+
+<div>
+  <strong>Name: </strong> {{Orders.name}}
+
+</div>
+<div>
+  <strong>Phone: </strong> {{Orders.phone}}
+
+</div>
+
+<div>
+    <strong>Items Purchased: </strong> {{Orders.ItemPurchased}}
+  
+  </div>
+
+  <div>
+      <strong>Price: </strong> {{Orders.Price}}
+    
+    </div>
+  </div>
+<app-orders></app-orders>
+
+<app-footer></app-footer>

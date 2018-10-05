@@ -1,0 +1,8 @@
+.divstyle1
+{
+    border-style: solid;
+    border-color: coral;
+
+    border:10px solid red;
+    font-size: 30px;
+}
