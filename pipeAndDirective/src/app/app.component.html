@@ -1,0 +1,120 @@
+
+<b>Custom Directive Sample</b>
+<div class="row">  
+ <span>Please Enter your credit card number:</span> <input type="text" placeholder="Enter any number" maxlength="12" appCreditvalidate />  
+</div> 
+
+<hr>
+<h4 class="bg-primary text-white">Custom Pipe : Alternate Case Demo</h4>  
+  
+<h4>Original Text:  <b class="text-success">{{name}}</b> </h4>  
+<h4>Formatted Text: <b class="text-primary">{{name | alternatecase}}</b></h4>  
+  
+<br />  
+<h4>Original Text:  <b class="text-success">{{text}}</b></h4>  
+<h4>Formatted Text: <b class="text-primary">{{text | alternatecase}}</b></h4> 
+
+<h4>Original Text</h4>  
+<h4 class="bg-primary text-white">{{text}}</h4>  
+<hr />  
+  
+<h4>Skip First 2 Character from string</h4>  
+<h4 class="bg-primary text-white">{{text | slice:2}}</h4>  
+  
+<hr />  
+<h4>Get First 5 Characters from string</h4>  
+<h4 class="bg-primary text-white">{{text | slice:0:5}}</h4>  
+  
+<hr />  
+<h4>Get Last 2 Character from string</h4>  
+<h4 class="bg-primary text-white">{{text | slice:-2}}</h4>  
+  
+<h4>Get Third Last Character from string</h4>  
+<h4 class="bg-primary text-white">{{text | slice:-3:-2}}</h4>  
+
+<hr>
+<h3> CurrencyPipe Usage Example</h3>  
+<p>Original data: <b>{{mynumber}}</b></p>  
+<p>Default Format: <b>{{ mynumber|currency}}</b></p><br />  
+  
+<div class="bd-example">  
+    <table class="table table-inverse">  
+        <thead class="bg-primary">  
+            <tr>  
+                <th>#</th>  
+                <th>Formats</th>  
+                <th>Format 1</th>  
+                <th>Format 2</th>  
+            </tr>  
+        </thead>  
+        <tbody>  
+            <tr class="bg-success">  
+                <th scope="row">1</th>  
+                <td>USD Formats</td>  
+                <td>{{ mynumber|currency:'USD'}}</td>  
+                <td>{{ mynumber|currency:'USD':'code'}}</td>  
+            </tr>  
+  
+            <tr class="bg-warning">  
+                <th scope="row">2</th>  
+                <td>CAD Formats</td>  
+                <td>{{ mynumber|currency:'CAD'}}</td>  
+                <td>{{ mynumber|currency:'CAD':'code'}}</td>  
+            </tr>  
+  
+            <tr class="bg-danger">  
+                <th scope="row">3</th>  
+                <td>INR Formats</td>  
+                <td>{{ mynumber|currency:'INR'}}</td>  
+                <td>{{ mynumber|currency:'INR':'code'}}</td>  
+            </tr>  
+        </tbody>  
+    </table>  
+</div>  
+<hr>
+
+<div class="row" style="margin-bottom:5px">  
+  <div class="col-md-6 col-md-offset-3"><span style="font-size:24px; font-weight:bold">PercentPipe (percent) Example</span></div>  
+  </div>  
+<div>
+<!-- 
+  <table class="table table-inverse" style="font-size:20px; font-weight:400">  
+    <thead class="bg-primary">  
+        <tr>  
+            <th>#</th>  
+            <th>Original Data</th>  
+            <th>Format 1</th>  
+            <th>Format 2</th>  
+            <th>Format 3</th>  
+        </tr>  
+    </thead>  
+    <tbody>  
+        <tr class="bg-success">  
+            <th scope="row">1</th>  
+            <td>{{mynumber}}</td>  
+            <td>{{ mynumber|percent}}</td>  
+            <td>{{ mynumber|percent:'2.4-8'}}</td>  
+            <td>{{ mynumber|percent:'5.4-8':'in'}}</td>  
+        </tr>  
+        <tr class="bg-warning">  
+            <th scope="row">2</th>  
+            <td>{{mynumber2}}</td>  
+            <td>{{ mynumber2|percent}}</td>  
+            <td>{{ mynumber2|percent:'2.4-8'}}</td>  
+            <td>{{ mynumber2|percent:'5.4-8':'in'}}</td>  
+        </tr>  
+    </tbody>  
+</table>   -->
+</div>
+
+ <div>
+  <hr>
+  <h3>Date Formats Sample</h3>  
+<p>Today is :{{currentdate}}</p>  
+  
+<p>Today is : {{currentdate | date:'fullDate'}}</p>  
+<p>Current time is : {{currentdate | date:'shortTime'}}</p>  
+<p>Current Date is: {{currentdate | date:'dd-MMMM-yyyy'}}</p> 
+<p>{{curDate}}</p>
+ </div>
+
