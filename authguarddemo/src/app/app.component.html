@@ -1,0 +1,25 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Angular SPA</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active">
+        <a [routerLink]="['Home']">Home</a> </li>
+      <li><a [routerLink]="['merchant']">Merchant</a></li>
+      <li><a [routerLink]="['customer']">Customer</a></li>
+      <li><a [routerLink]="['admin']">Admin</a></li>
+    </ul>
+  </div>
+
+
+ 
+
+</nav>
+
+<div>
+  <h3>
+      <router-outlet></router-outlet>
+  </h3>
+  
+</div>
