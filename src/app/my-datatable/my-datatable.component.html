@@ -1,0 +1,38 @@
+<div class="mat-elevation-z8">
+ <!-- Material Table -->
+  <mat-table #table [dataSource]="dataSource" matSort aria-label="Elements">
+
+    <!-- Id Column -->
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef mat-sort-header  style="color:green;font-size: 28px;">Id</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.id}}</mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header  style="color:green;font-size: 28px;">Name</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.name}}</mat-cell>
+    </ng-container>
+
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="salary">
+        <mat-header-cell *matHeaderCellDef mat-sort-header  style="color:green;font-size: 28px;">salary</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.salary}}</mat-cell>
+      </ng-container>
+
+    
+
+    <!-- Matrial row header -->
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+  <!-- Material Datatable Pagination -->
+  <mat-paginator #paginator
+    [length]="dataSource.data.length"
+    [pageIndex]="0"
+    [pageSize]="50"
+    [pageSizeOptions]="[5, 10, 20, 50]">
+  </mat-paginator>
+</div>
