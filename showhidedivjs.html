@@ -1,0 +1,25 @@
+﻿<html>  
+<head runat="server">  
+    <title>Show/Hide div</title>  
+    <script>  
+        function showhide() 
+        {  
+            var div = document.getElementById("newpost");  
+            if (div.style.display !== "none") {  
+                div.style.display = "none";  
+            }  
+            else {  
+                div.style.display = "block";  
+            }  
+        }  
+    </script>  
+</head>  
+<body>  
+    <div id="newpost">  
+        <p> JavaScript is the programming language of HTML and the Web. <br />  
+            Programming makes computers do what you want them to do. <br />  
+            JavaScript is easy to learn.  </p>  
+    </div>  
+    <button id="button" onclick="showhide()">Show/Hide</button>  
+</body>  
+</html> 

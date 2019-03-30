@@ -1,0 +1,30 @@
+﻿<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<title></title>
+</head>
+<script type="text/javascript">
+var isAllCheck = false;
+function togglecheckboxes(cn){
+
+    var cbarray = document.getElementsByName(cn);
+    for(var i = 0; i < cbarray.length; i++){
+
+        cbarray[i].checked = !isAllCheck
+}   
+isAllCheck = !isAllCheck;   
+}
+
+</script>
+<body>
+
+    <input type="checkbox" name="cb" />
+    <input type="checkbox" name="cb" />
+    <input type="checkbox" name="cb" />
+    <input type="checkbox" name="cb" />
+    <input type="checkbox" name="cb" />
+    <input type="Button" onclick="togglecheckboxes('cb')" value="Toggle all" />
+
+
+</body>
+</html>
