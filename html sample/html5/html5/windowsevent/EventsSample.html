@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+On Blur: Enter your name: <input type="text" id="fname" onblur="myFunction()">
+
+Onchange : Enter your name: <input type="text" id="fname" onchange="myFunction1()">
+
+
+
+<p>When you leave the input field, a function is triggered which transforms the input text to upper case.</p>
+
+
+<p ondblclick="myFunction2()">Double-click this paragraph to trigger a function.</p>
+
+<p id="demo"></p>
+
+<div > On focus demo 
+
+    
+Enter your name: <input type="text" onfocus="myFunction3(this)">
+
+<p>When the input field gets focus, a function is triggered which changes the background-color.</p>
+
+</div>
+
+<div style="border:5px solid gray">
+    <table>
+        <tr>
+            <td>
+                First Name
+            </td>
+            <td>
+                <input type="text" id="txtFirstName"
+                       onkeyup="validateRequiredField('txtFirstName')"
+                       onblur="validateRequiredField('txtFirstName')"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Last Name
+            </td>
+            <td>
+                <input type="text" id="txtLastName"
+                       onkeyup="validateRequiredField('txtLastName')"
+                       onblur="validateRequiredField('txtLastName')"/>
+            </td>
+        </tr>
+    </table>
+</div>
+<div>
+    <img src="NonExistingImage.jpg" onerror="imageErrorHandler()" />
+</div>
+<div>
+
+    <input type="button" value="Open window" onclick="window.open('www.google.com','popUpWindow','height=400,width=600,left=10,top=10,,scrollbars=yes,menubar=no');" />
+</div>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("fname");
+  x.value = x.value.toUpperCase();
+}
+
+function myFunction1() {
+  var x = document.getElementById("fname");
+  x.value = x.value.toUpperCase();
+}
+
+function myFunction2() {
+  document.getElementById("demo").innerHTML = "Hello World";
+}
+
+function myFunction3(x) {
+  x.style.background = "yellow";
+}
+
+    function validateRequiredField(controlId)
+    {
+        var control = document.getElementById(controlId);
+        control.style.color = 'white';
+        if (control.value == "")
+        {
+            control.style.background = 'red';
+        }
+        else
+        {
+            control.style.background = 'green';
+        }
+    }
+    function imageErrorHandler()
+    {
+        alert("There is a problem loading the image");
+    }
+
+</script>
+
+</body>
+</html>
