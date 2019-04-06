@@ -67,6 +67,21 @@ if (ele.checked) {
     }
 }
 }
+function addNode() { 
+    var newP = document.createElement("p"); 
+	var textNode = document.createTextNode(" This is a new text node"); 
+	newP.appendChild(textNode); document.getElementById("firstP").appendChild(newP); 
+    
+    } 
+function ValidateLoginPage()
+{
+    var loginId = document.getElementById("txtuserName").value;
+    if(loginId=="" )
+    {
+        document.getElementById("ErrorMesage").innerHTML="Please Enter UserName"
+        document.getElementById("ErrorMesage").style.backgroundColor='Red';
+    }
+}
     </script>
 </head>
 
@@ -86,6 +101,22 @@ if (ele.checked) {
             </tr>
         </TABLE>
   
+<div style="border:5px solid gray;"> 
+    <h1>Creat element dynamically & append to paragraph </h1>
+    <p id="firstP">firstP<p>
 
+            <input type="button" value="Add & Append elememt" onclick="addNode()"/>
+</div>
+
+<div style="border:5px solid gray;"> 
+    <h1>Sample Login Page </h1> 
+    Login Name <Input type="text" id="txtuserName" >
+        <br>
+   Password <Input type="password" id="txtPassword" >
+    <br>
+    <input type="button" value="Login" onclick="ValidateLoginPage()"/>
+    <p id="ErrorMesage"><p>
+
+</div>
 </html>
 </body>
