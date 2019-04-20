@@ -38,3 +38,96 @@
 
 </body>
 </html>
+
+
+========
+<html>
+
+<head>
+    <script>
+        function createobject() {
+
+            var e = document.getElementById("ddlrole");
+            var value = e.options[e.selectedIndex].value;
+            var text = e.options[e.selectedIndex].text;
+
+            if (value == 2) {
+               
+               
+                Manager.prototype = new Employee();
+
+                var objManager = new Manager('n');
+                objManager.fname='xyz123';// set the value from UI controls
+                var  x= objManager.addemployee();
+                alert(x);
+                alert(objManager.fname);
+                console.log(objManager);
+
+            }
+
+            if (value == 3) {
+                var objManager = new HR();
+                objManager.firstName = "ABC";
+                objManager.lastName = "XYZ";
+                objManager.DOj = '2/2/2019';
+                objManager.HRCOde = 'CIPO';
+            var x= objManager.addemployee();
+         
+                console.log(objManager);
+
+            }
+        }
+
+        function Employee(firstName, lastName, DOJ) {
+            this.fname = firstName;
+            this.lname = lastName;
+            this.doj = DOJ;
+            
+          
+        }
+        Employee.prototype.addemployee=function()
+        {
+            return "Added a new Employee";
+        }
+
+   function Student(name) 
+    {
+        this.name = name; 
+
+        this.getName = function () 
+        {
+            return this.name;
+        }
+    } 
+
+        function Manager(managercode, employeelist) {
+            this.mcode = managercode;
+            this.emplist = employeelist;
+
+        }
+        Manager.prototype = Employee;
+
+
+        function HR(HRCOde, admintask) {
+            this.hrcod = HRCOde;
+            this.task = admintask;
+        }
+        HR.prototype = Employee;
+    </script>
+</head>
+
+<body>
+
+    <div>
+        Select Type of Role :
+        <select id="ddlrole">
+            <option value="1">EMployee</option>
+            <option value="2" selected="selected">Manager</option>
+            <option value="3">HR</option>
+        </select>
+    </div>
+
+    <input type="button" onclick="createobject()" value="Select and create" />
+</body>
+
+</html>
