@@ -131,3 +131,65 @@
 </body>
 
 </html>
+
+================
+
+
+<html>
+
+<head>
+    <script>
+         // Account object is be the base object
+         var Account = function () { }
+        
+        // Add draw function to the Account prototype
+        // Objects derived from Account should be able to override draw() method
+        Account.prototype.draw = function ()
+        {
+            return "I am a generic withdraw....";
+        }  
+
+             // Create a LoanAccount object
+             var LoanAccount = function () { }
+        
+        // Make Account the parent for LoanAccount
+        LoanAccount.prototype = Object.create(Account.prototype);
+
+          // Circle object overrides draw() method
+          LoanAccount.prototype.draw = function ()
+            {
+                return "I am a Loan Account.....";
+            }
+
+            var checkingAccount = function () { }
+            checkingAccount.prototype = Object.create(Account.prototype);
+            checkingAccount.prototype.draw = function ()
+            {
+                return "I am a checking Account";
+            }
+
+            function createobject() {
+                
+                   
+                    var acc= new Account();
+                    alert(acc.draw());
+
+                    var acc1= new LoanAccount();
+                    alert(acc1.draw());
+
+
+                }
+        
+    </script>
+</head>
+
+<body>
+
+    <div>
+       
+    </div>
+
+    <input type="button" onclick="createobject()" value="Select and create" />
+</body>
+
+</html>
