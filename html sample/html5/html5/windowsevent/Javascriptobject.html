@@ -27,3 +27,43 @@ document.getElementById("demo1").innerHTML =
 
 </body>
 </html>
+
+
+<html>
+
+<head>
+    <script>
+        function addNumbers(firstNumber, secondNumber) {
+            var returnValue = "Result is : ";
+            function add() {
+                return returnValue + (firstNumber + secondNumber);
+            }
+            return add();
+        }
+
+        function Callme() {
+            var result = addNumbers(10, 20)
+            document.write(result);
+        }
+
+        var incrementClickCount = (function () {
+            var clickCount = 0;
+            return function () {
+                return ++clickCount;
+            }
+        })();
+
+    </script>
+</head>
+
+<body>
+
+    <div>
+    </div>
+
+    <input type="button" onclick="Callme()" value="Callme" />
+
+    <input type="button" value="Click Me" onclick="alert(incrementClickCount());" />
+</body>
+
+</html>
