@@ -63,3 +63,289 @@ function updateModels(theForm)
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+====================
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  
+    <style>
+            #root {
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+        
+        .container {
+          display: flex;
+          flex-wrap: wrap;
+        }
+        
+        .card {
+          margin: 1rem;
+          border: 1px solid gray;
+        }
+        
+        @media screen and (min-width: 600px) {
+          .card {
+            flex: 1 1 calc(50% - 2rem);
+          }
+        }
+        
+        @media screen and (min-width: 900px) {
+          .card {
+            flex: 1 1 calc(33% - 2rem);
+          }
+        }</style>
+  
+
+  </head>
+
+  <body>
+
+    <div id="root"></div>
+ 
+    <script>
+
+// var obj = new Object();
+//    obj.name = "Raj";
+//    obj.Salary  = 32000;
+//    obj.DOJ = '1/1/2019';
+  
+//    var myJSONObject = {"bindings": [
+//         {"ircEvent": "PRIVMSG", "method": "newURI", "regex": "^http://.*"},
+//         {"ircEvent": "PRIVMSG", "method": "deleteURI", "regex": "^delete.*"},
+//         {"ircEvent": "PRIVMSG", "method": "randomURI", "regex": "^random.*"}
+//     ]
+// };
+// var jsonString= JSON.stringify(myJSONObject);
+//    alert(jsonString);
+      //       const app = document.getElementById('root')
+       
+      //  const logo = document.createElement('img')
+      //  logo.src = 'logo.png'
+       
+      //  const container = document.createElement('div')
+      //  container.setAttribute('class', 'container')
+       
+      //  app.appendChild(logo)
+      //  app.appendChild(container)
+       
+      //  var request = new XMLHttpRequest()
+      //  request.open('GET', 'https://ghibliapi.herokuapp.com/films', true)
+      //  request.onload = function() {
+      //    // Begin accessing JSON data here
+      //    var data = JSON.parse(this.response)
+      //    if (request.status >= 200 && request.status < 400) {
+      //      data.forEach(movie => {
+      //        const card = document.createElement('div')
+      //        card.setAttribute('class', 'card')
+       
+      //        const h1 = document.createElement('h1')
+      //        h1.textContent = movie.title
+       
+      //        const p = document.createElement('p')
+      //        movie.description = movie.description.substring(0, 300)
+      //        p.textContent = `${movie.description}...`
+       
+      //        container.appendChild(card)
+      //        card.appendChild(h1)
+      //        card.appendChild(p)
+      //      })
+      //    } else {
+      //      const errorMessage = document.createElement('marquee')
+      //      errorMessage.textContent = `Gah, it's not working!`
+      //      app.appendChild(errorMessage)
+      //    }
+      //  }
+       
+      //  request.send()
+
+      let sum=(a,b)=>a+b;
+      alert(sum(10,20));
+
+      let MyTask = new Promise(function(resolve, reject) {
+
+//cleaning the room
+
+let isClean = false;
+
+if (isClean) {
+  resolve('Task done .........');
+} else {
+  reject('Task not done..........');
+}
+
+});
+
+MyTask.then(function(fromResolve) {
+console.log('the status is :' + fromResolve);
+}).catch(function(fromReject){
+console.log('the status  is' + fromReject);
+})
+
+
+
+
+
+let Task1 = function() {
+  return new Promise(function(resolve, reject) {
+    resolve('Task1 is done....');
+  });
+};
+
+let Task2 = function(message) {
+  return new Promise(function(resolve, reject) {
+    resolve(message + ' Task2 is done .....');
+  });
+};
+
+let Task3 = function(message) {
+  return new Promise(function(resolve, reject) {
+    resolve( message + ' Task3 is done....');
+  });
+};
+
+Task1().then(function(result){
+	return Task2(result);
+}).then(function(result){
+	return Task3(result);
+}).then(function(result){
+	console.log('finished ' + result);
+})
+
+
+//
+
+const recordVideoOne = new Promise((resolve, reject) => {
+  resolve('Video 1 Recorded')
+})
+
+const recordVideoTwo = new Promise((resolve, reject) => {
+  resolve('Video 2 Recorded')
+})
+
+const recordVideoThree = new Promise((resolve, reject) => {
+  resolve('Video 3 Recorded')
+})
+
+Promise.all([
+  recordVideoOne,
+  recordVideoTwo,
+  recordVideoThree
+]).then(messages => {
+  console.log(messages)
+})
+
+Promise.race([
+  recordVideoOne,
+  recordVideoTwo,
+  recordVideoThree
+]).then(message => {
+  console.log(message)
+})
+//
+       
+var jsonURL = 'https://ghibliapi.herokuapp.com/films1';
+
+get(jsonURL).then(function(response) {
+  console.log("Success!", JSON.parse(response));
+
+  var data = JSON.parse(response)
+
+  alert(data)
+}, function(error) {
+  alert("Failed!", error);
+});
+
+
+function get(url) {
+  // Return a new promise.
+  return new Promise(function(resolve, reject) {
+    // Do the usual XHR stuff
+    var req = new XMLHttpRequest();
+    req.open('GET', url);
+
+    req.onload = function() {
+      // This is called even on 404 etc
+      // so check the status
+      if (req.status == 200) {
+        // Resolve the promise with the response text
+        resolve(req.response);
+      }
+      else {
+        // Otherwise reject with the status text
+        // which will hopefully be a meaningful error
+        reject(Error(req.statusText));
+        alert(req.statusText);
+      }
+    };
+
+    // Handle network errors
+    req.onerror = function() {
+      reject(Error("Network Error"));
+    };
+
+    // Make the request
+    req.send();
+  });
+}
+
+
+
+console.clear();
+
+
+// 1. Some helper functions
+function square(value) {
+    console.log('About to square', value);
+    return value * value;
+}
+function addOne(value) {
+    console.log('About to add 1 to', value);
+    return value + 1;
+}
+
+
+
+
+// 2. Create a Promise
+const getMyNumber = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        if (true) {
+            // Resolve the Promise sending back a value
+            console.log('Going to resolve with a number.');
+            resolve(3);
+        } else {
+            reject('Something bad happened.');
+        }        
+    }, 2000);
+});
+
+
+
+
+// 3. Do some things with the number
+getMyNumber
+    .then(square)
+    .then(addOne)
+    .then((result) => console.log('The final result is', result))
+    .catch(console.error);
+
+
+
+           </script>
+  </body>
+</html>
